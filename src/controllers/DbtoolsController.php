@@ -1,7 +1,8 @@
 <?php namespace Slave\Dbtools;
 
 use Controller;
-
+use Input;
+use Validpack;
 class DbtoolsController extends Controller {
 
      /**
@@ -14,7 +15,14 @@ class DbtoolsController extends Controller {
     {
         echo 'this';
         // Validator::validate();
-    } 
+    }
+    public function getCreate($model){
+        $data = Input::except('token');
+        var_dump($data);
+        Validpack::createview();
+
+
+    }
     public function missingMethod($parameters = array())
     {
         echo 'No method found';
