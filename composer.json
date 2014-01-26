@@ -1,6 +1,6 @@
 {
     "name": "slave/dbtools",
-    "description": "",
+    "description": "Laravel based db tools",
     "authors": [
         {
             "name": "panagiotis",
