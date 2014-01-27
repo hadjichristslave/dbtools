@@ -68,7 +68,7 @@ class Dbtools extends Model {
         }
 	}
 	public static function exists($model, $id, $tablekey){
-		$counter  =$model::where($tablekey , '=' , $id)->count();
+		$counter = $model::where($tablekey , '=' , $id)->count();
 		return $counter>0;
 	}
 	

@@ -5,6 +5,7 @@ use Input;
 use Validpack;
 use Hash;
 use View;
+use Response;
 
 class DbtoolsController extends Controller {
 
@@ -15,9 +16,11 @@ class DbtoolsController extends Controller {
      * Post - /pathToController/create/model
      * Post - /pathToController/update/model/id/#tablekey
      * Post - /pathToController/delete/model/id/#tablekey
-     *
+     * Get  - /pathToController/return/model/#id/#tablekey
      * #url parameters that contain hashtags are optional
      * All methods must input the data array that corresponds to the table data
+     * If no id is given on return urls, all results paginated 15 will be returned
+     * 
      * 
      *  Http answer codes : 
      *  #database-1 Succesful data instert
@@ -51,5 +54,14 @@ class DbtoolsController extends Controller {
     public function missingMethod($parameters = array()){
         echo 'No method found';
         return;
+    }
+    public function getReturn($model, $id =null, $tablekey = null){
+        $key = $tablekey==null?'id':$tablekey;
+        if($id!=null){
+            $answer = $model::where($key , '=' , $id)->first();
+        }else{
+            $answer = $model::paginate(15);
+        }
+        return $answer;
     }
 }
