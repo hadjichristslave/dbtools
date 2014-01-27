@@ -20,7 +20,8 @@ class DbtoolsController extends Controller {
      * #url parameters that contain hashtags are optional
      * All methods must input the data array that corresponds to the table data
      * If no id is given on return urls, all results paginated 15 will be returned
-     * 
+     * can choose page with @page url parameter
+     * can choose sorting with @sort url parameter
      * 
      *  Http answer codes : 
      *  #database-1 Succesful data instert
