@@ -1,6 +1,7 @@
 {
     "name": "slave/dbtools",
     "description": "Laravel based db tools",
+    "license" : "MIT",
     "authors": [
         {
             "name": "panagiotis",
